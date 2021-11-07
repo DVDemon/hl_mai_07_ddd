@@ -1,4 +1,6 @@
 #include <iostream>
+#include <string>
+#include <exception>
 
 /*
 public interface Client {

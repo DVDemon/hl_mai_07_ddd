@@ -1,54 +1,6 @@
 #include <iostream>
 #include <string>
 #include <exception>
-/*
-
-public class User
-{
-    private const int AuthRetryCountLimit = 5;
-    public string UserName { get; private set; }
-    public bool AccountIsLocked { get; private set; }
-
-    public bool Authenticate(string rawPassword, IPasswordEncryptor passwordEncryptor)
-    {
-        if (AccountIsLocked)
-            throw new InvalidOperationException("User account is locked.");
-
-        var hashedPassword = passwordEncryptor.EncryptPassword(rawPassword);
-
-        if (_password == hashedPassword)
-        {
-            ResetAuthRetryAttempts();
-            return true;
-        }
-
-        if (_password != hashedPassword)
-            RegisterNewFailedAttempt();
-
-        return false;
-    }
-
-    public void UnlockAccount()
-    {
-        if (!AccountIsLocked)
-            return;
-
-        AccountIsLocked = false;
-        _authRetryCount = 0;
-    }
-
-    private void RegisterNewFailedAttempt()
-    {
-        _authRetryCount++;
-
-        if (_authRetryCount == AuthRetryCountLimit)
-        {
-            AccountIsLocked = true;
-        }
-    }
-    ...
-}
-*/
 
 struct PasswordEncryptor
 {

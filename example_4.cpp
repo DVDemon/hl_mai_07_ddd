@@ -1,4 +1,6 @@
 #include <iostream>
+#include <string>
+#include <exception>
 
 /*
 public class Forum extends Entity {
