@@ -2,27 +2,45 @@
 #include <string>
 #include <exception>
 
-/*
-public class Forum extends Entity {
-public Discussion startDiscussionFor(
-String aSubject,
-Author anAuthor,
-ForumIdentityService aForumIdentityService) {
-if (this.isClosed()) {
-throw new IllegalStateException("Forum is closed.");
-}
-Discussion =
-new Discussion(
-this.tenant(),
-this.forumId(),
-aForumIdentityService.nextDiscussionId(),
-anAuthor,
-aSubject);
-return discussion;
-}
-}
-*/
+struct Entity{};
+struct Author{};
 
-auto main() -> int {
+struct ForumIdentityService{
+    std::string nextDiscussionId(){
+        return std::string();
+    };
+};
+
+struct Discussion{
+    Discussion(const std::string&,const std::string&,const std::string&,const Author&,const std::string&){};
+};
+
+struct Forum : public Entity
+{
+    std::string tenant(){
+        return "current_tennant";
+    }
+
+    std::string forumId(){
+        return "forum id";
+    }
+
+    Discussion startDiscussionFor(
+        std::string aSubject,
+        const Author& anAuthor,
+        ForumIdentityService& aForumIdentityService)
+    {
+
+        return Discussion(
+                tenant(),
+                forumId(),
+                aForumIdentityService.nextDiscussionId(),
+                anAuthor,
+                aSubject);
+    }
+};
+
+auto main() -> int
+{
     return 0;
 }

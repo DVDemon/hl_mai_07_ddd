@@ -2,22 +2,22 @@
 #include <string>
 #include <exception>
 
-/*
-public class TranslatingCollaboratorService implements CollaboratorService { ...
-public Author authorFrom(Tenant aTenant, String anIdentity) {
-Author author =
-this.userInRoleAdapter()
-.toCollaborator(
-aTenant,
-anIdentity,
-"Author",
-Author.class);
-return author;
+struct Tenant {};
+struct Author {
+    Author(const Tenant&,const std::string &) {}
+};
+struct CollaboratorService{};
 
-}
-}
-*/
 
-auto main() -> int {
+struct TranslatingCollaboratorService : CollaboratorService
+{
+    Author authorFrom(Tenant aTenant, const std::string&  anIdentity)
+    {
+        return Author(aTenant,anIdentity);
+    }
+};
+
+auto main() -> int
+{
     return 0;
 }

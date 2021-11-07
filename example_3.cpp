@@ -2,35 +2,24 @@
 #include <string>
 #include <exception>
 
-/*
-public interface Client {
-    
-    public void changeName(String firstName, String lastName);
-    
-    public void relocateTo(Address address);
-    
-    public void changePhoneNumber(Telephone telephone);
-    
-    public void emailAddress(EmailAddress emailAddress);
-}
- 
-public class ClientService {
+struct Address{};
+struct Telephone{};
+struct EmailAddress{};
 
-    @Transactional
-    public void changeClientPhoneNumber(String clientId, Telephone telephone) {
- 
-        Client = clientRepository.getById(clientId);
- 
-        if (client == null) {
-            throw new IllegalStateException("Client does not exist.");
-        }
-   
-        client.changePhoneNumber(telephone);
+struct Client {
+    
+     void changeName(const std::string& firstName, const std::string&  lastName) {}
+     void relocateTo(const Address& address) {}
+     void changePhoneNumber(const Telephone& telephone){}
+     void emailAddress(const EmailAddress& emailAddress){}
+};
+struct ClientService {
+    void changeClientPhoneNumber(const std::string& clientId, const Telephone& telephone) {
+        Client client; // = clientRepository.getById(clientId);
+        client.changePhoneNumber(telephone);
     }
-    ...
-}
+};
 
-*/
 auto main() -> int {
     return 0;
 }
