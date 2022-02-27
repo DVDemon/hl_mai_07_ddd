@@ -2,6 +2,9 @@
 #include <string>
 #include <exception>
 
+/*
+    Фабрика в аггрегате
+*/
 struct Entity{};
 struct Author{};
 
