@@ -2,6 +2,11 @@
 #include <string>
 #include <exception>
 
+
+/*
+    Пример применения принципов DDD
+*/
+
 struct Address{};
 struct Telephone{};
 struct EmailAddress{};

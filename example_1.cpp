@@ -2,6 +2,10 @@
 #include <string>
 #include <exception>
 
+/*
+    Пример применения принципов DDD
+*/
+
 struct PasswordEncryptor
 {
     std::string EncryptPassword(const std::string &password)

@@ -2,6 +2,9 @@
 #include <string>
 #include <exception>
 
+/*
+    Антипример использования DDD
+*/
 
 struct Client{
     void setClientId(const std::string &) {};

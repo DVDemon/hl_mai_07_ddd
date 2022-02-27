@@ -2,6 +2,9 @@
 #include <string>
 #include <exception>
 
+/*
+    Фабрика как отдельный сервис
+*/
 struct Tenant {};
 struct Author {
     Author(const Tenant&,const std::string &) {}

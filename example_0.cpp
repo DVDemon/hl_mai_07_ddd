@@ -2,6 +2,10 @@
 #include <string>
 #include <exception>
 
+/*
+    Антипример использования DDD
+*/
+
 class User
 {
 private:
@@ -30,7 +34,7 @@ private:
 public:
     bool AuthenticateUser(const std::string &userName, const std::string &password)
     {
-        User user; // = _userRepository.GetUserByName(userName);
+        User user; // Зашружаем откуда-то пользователя
 
         if (user.GetAccountIsLocked())
             throw std::logic_error("User account is locked.");
@@ -45,7 +49,7 @@ public:
         if (user.GetAuthAccountRetry() == AuthRetryCountLimit)
             user.AccountIsLocked() = true;
 
-        //_userRepository.Save(user); 
+        // Записываем куда-то пользователя
         return false;
     }
 };
